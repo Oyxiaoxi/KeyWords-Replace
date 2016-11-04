@@ -9,7 +9,11 @@
 
 2. Operate
 
-	将 shell-keywords.php 放到你的 php 环境根目录或者上传到网站根目录下
+	将 shell-keywords.php 放到你的 php 环境根目录或者上传到网站根目录下即可。
+
+	` $pattern = '/(\.html|\.htm)$/'; `
+	
+	设置您要替换的文件格式，如：HTML,HTM,JavaScript等;
 
 3. Keywords
 
