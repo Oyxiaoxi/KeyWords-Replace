@@ -2,7 +2,7 @@
 session_start();
 error_reporting(E_ALL ^ E_NOTICE);
 
-$pattern = '/(\.html|\.htm)$/';  //只修改html htm txt 后缀的文件
+$pattern = '/(\.html|\.htm|\.js)$/';  //只修改html htm txt 后缀的文件
 $arr = empty($_SESSION['htmlArr'])?array():$_SESSION['htmlArr'];     //html文件的数组
 $pathArr = empty($_SESSION['dirArr'])?array():$_SESSION['dirArr']; //文件夹数组
 $curPath = empty($_SESSION['curPath'])?".":$_SESSION['curPath'];
@@ -404,34 +404,21 @@ if( empty($type) ){
             exit;
         }
         # code...
-
         if (file_exists($arr[$i])) {
             # code...
             $tmpstr = @file_get_contents($arr[$i]);
-
             $tmpEncode = mb_detect_encoding($tmpstr,array('ASCII','UTF-8','GB2312','GBK','BIG5'));
-
             $words = $tmpEncode == 'UTF-8'  ? $_SESSION['words_utf'] : $_SESSION['words_gbk'];
-
             $tmpnewstr = strtr($tmpstr,$words);
-
             $rs = @file_put_contents($arr[$i], $tmpnewstr);
-
         }
-
         $tmpnum = $i;
     }
-
     $startnum = $tmpnum;
-
-
     echo json_encode(array("valuenow"=>$startnum,"flag"=>"ok"));
-
     exit;
 }else{
-
     echo $type;
-
 }
 
 ?>
