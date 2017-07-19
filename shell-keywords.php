@@ -130,7 +130,7 @@ if( empty($type) ){
             <input type="hidden" name="startnum" id="startnum" value="100" />
         </div>
         <div class="progress">
-          <div class="progress-bar progress-bar-striped active" role="progressbar" id="progress" aria-valuenow="500" aria-valuemin="0" aria-valuemax="<? echo count($arr); ?>" style="width: 0%">
+          <div class="progress-bar progress-bar-striped active" role="progressbar" id="progress" aria-valuenow="500" aria-valuemin="0" aria-valuemax="<?php echo count($arr); ?>" style="width: 0%">
             <span>0%</span>
           </div>
         </div>
@@ -254,7 +254,7 @@ if( empty($type) ){
 </body>
 </html>
 
-<?
+<?php
 
 //    scanCurDir(".");
 //    echo count($arr)."<br>";
